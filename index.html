@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Browser Version Checker</title>
-  <script>
-    // Function to get browser information
-    function checkBrowserVersion() {
-      var userAgent = navigator.userAgent;
-      var chromeVersion = userAgent.match(/Chrome\/([0-9.]+)/);
-      var firefoxVersion = userAgent.match(/Firefox\/([0-9.]+)/);
+<body>
+    <object>
+        <embed src="https://github.com/akac97/testweb/raw/main/bushshootout_game.swf" width="1280" height="720" />
+    </object>
 
-      if (chromeVersion && parseFloat(chromeVersion[1]) < 119) {
-        document.getElementById('browserInfo').innerText = "Your Chrome browser is outdated (version " + chromeVersion[1] + "). Please update.";
-      } else if (firefoxVersion && parseFloat(firefoxVersion[1]) < 120) {
-        document.getElementById('browserInfo').innerText = "Your Firefox browser is outdated (version " + firefoxVersion[1] + "). Please update.";
-      } else {
-        document.getElementById('browserInfo').innerText = "Your browser is up to date.";
-      }
-    }
-  </script>
-</head>
-<body onload="checkBrowserVersion()">
-  <h1>Browser Version Checker</h1>
-  <p id="browserInfo">Checking your browser version...</p>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </body>
-</html>
