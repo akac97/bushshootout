@@ -1,7 +1,29 @@
-<body>
-    <object>
-        <embed src="https://raw.githubusercontent.com/akac97/bushshootout/main/bushshootout_game.swf" width="1280" height="720" />
-    </object>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bush Shootout</title>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+    <script>
+        let player = ruffle.createPlayer();
+        player.config = {
+            preferredRenderer: 'webgpu', // Set the preferred renderer to WebGPU
+            autoplay: "on",
+            // Add any other configurations here...
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let element = document.createElement("div");
+            element.id = "flashContent";
+            document.body.appendChild(element);
+
+            player.load("https://raw.githubusercontent.com/akac97/testweb/main/bushshootout_game.swf").then(function () {
+                element.appendChild(player);
+            }).catch(function (error) {
+                console.error("Error loading Ruffle:", error);
+            });
+        });
+    </script>
 </body>
+</html>
