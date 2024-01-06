@@ -18,7 +18,7 @@
             element.id = "flashContent";
             document.body.appendChild(element);
 
-            player.load("https://raw.githubusercontent.com/akac97/testweb/main/bushshootout_game.swf").then(function () {
+            player.load("https://raw.githubusercontent.com/akac97/bushshootout/main/bushshootout_game.swf").then(function () {
                 element.appendChild(player);
             }).catch(function (error) {
                 console.error("Error loading Ruffle:", error);
