@@ -2,17 +2,18 @@
 <html>
 <head>
     <title>Bush Shootout</title>
-    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle/dist/ruffle.js"></script>
 </head>
 <body>
     <script>
-        let player = ruffle.createPlayer();
-        player.config = {
-            autoplay: "on",
-            // Add any other configurations here...
-        };
+        window.addEventListener("DOMContentLoaded", function () {
+            let RufflePlayer = window.RufflePlayer;
+            let player = RufflePlayer.newest().createPlayer();
+            player.config = {
+                autoplay: "on",
+                // Add any other configurations here...
+            };
 
-        document.addEventListener("DOMContentLoaded", function () {
             let element = document.createElement("div");
             element.id = "flashContent";
             document.body.appendChild(element);
